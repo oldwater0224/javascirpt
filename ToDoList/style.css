@@ -1,0 +1,43 @@
+body{
+  margin: 0; /* body의 기본속성은 margin 8px이기 때문에*/
+  background-image: url(https://t3.ftcdn.net/jpg/02/18/26/20/360_F_218262069_OCqHqqKWlwVeZWB8pn32WVFkoZCbWiel.jpg);
+  background-size: cover;
+
+  
+}
+
+.container{
+  border: 1px solid #000;
+  min-height: 100vh;   /* 보는 화면의 높이 만큼 채운다.*/
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.task_area{
+  border: 1px solid #000;
+}
+.task_tabs{
+  display: flex;
+  border-bottom: 1px solid #000;
+  position: relative;
+}
+
+.task_tabs div{
+  padding: 1em;
+  cursor:pointer
+}
+#underline{
+  height: 4px;
+  background-color: red;
+  position: absolute;
+  width: 60px;
+  left: 0px;
+  top: 52px;
+  padding: 0px;
+}
+.task{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+.task_done{
+  text-decoration: line-through;
+}

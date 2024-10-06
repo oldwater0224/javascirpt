@@ -1,0 +1,15 @@
+
+body{
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+}
+.container{
+  border: 1px solid #000;
+  min-height: 100vh;
+}
+.task_tabs{
+  display: flex;
+  border-bottom: 1px solid #000;
+  position: relative;
+}
