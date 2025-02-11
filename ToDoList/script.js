@@ -24,8 +24,9 @@ let underLine = document.querySelector("#underline");
 let taskList = [];
 let mode ='all' // filter에서 전역변수로 설정 함. Render에서 쓰기 위해
 let filterList = []; // filter에서 전역변수로 설정 함. Render에서 쓰기 위해
-ButtonAdd.addEventListener("mousedown",AddTask);
+ButtonAdd.addEventListener("click", AddTask)
  
+// click key event 만들기
 
 // enter key event
 taskInput.addEventListener("keydown", function (event) {
@@ -41,7 +42,7 @@ for(let i = 1; i<tabs.length; i++){
 }
 
 function AddTask(){                // input에 button 입력 , 객체를 만들어서 추가했다.
-  if(taskInput.value === ""){
+  if(taskInput.value === ""){       // input에 입력하지 않을 경우 alert
    return alert("할일 입력");
   }
   let task = {                     
@@ -74,8 +75,8 @@ function Render(){
       `<div class="task task_done">
         <div>${list[i].taskContent}</div>         
         <div>
-        <button onclick="checkComplete('${list[i].id}')">check</i></button>
-        <button onclick="deleteComplete('${list[i].id}')">delete</button>
+        <button onclick="checkComplete('${list[i].id}')"><i class="fa-solid fa-rotate-left"></i></button>
+        <button onclick="deleteComplete('${list[i].id}')"><i class="fa-solid fa-trash"></i></button>
         </div> 
       </div>`;
     }
@@ -84,8 +85,8 @@ function Render(){
       `<div class="task">
          <div>${list[i].taskContent}</div>         
          <div>
-         <button onclick="checkComplete('${list[i].id}')">check</button>
-         <button onclick="deleteComplete('${list[i].id}')">delete</button>
+         <button onclick="checkComplete('${list[i].id}')"><i class="fa-solid fa-check"></i></button>
+         <button onclick="deleteComplete('${list[i].id}')"><i class="fa-solid fa-trash"></i></button>
         </div> 
       </div>`;
     }

@@ -48,6 +48,7 @@ body{
   width: 30px;
 
 }
-#task_input{
+button{
+  border-radius: 30%;
   
 }
