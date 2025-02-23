@@ -15,6 +15,9 @@
  * 할일 입력 후 자동으로 창 비우기 Done
  * 할일을 입력하지 않았을 때 추가 안되게 하기 Done
  * 앱 디자인 하기
+ * 메뉴와 전체 삭제 버튼 만들기 
+ * 라이트모드와 다크모드 만들기
+ * 
  */
 
 let taskInput = document.querySelector("#task_input");
