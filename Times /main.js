@@ -1,8 +1,11 @@
 const API_KEY = `1723a3d593d4445287963e68f0ccf9db`
-const getLatestNews = () =>{
+let News = []
+const getLatestNews = async () =>{
   const url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);          // url 인스턴스
-  const reSponse = fetch(url)
-  console.log("hello world",url);
+  const reSponse = await fetch(url)
+  const data = await reSponse.json();
+  News = data.articles;
+  console.log("hello world",News);
   
 }
 getLatestNews();
