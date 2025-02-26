@@ -9,3 +9,4 @@ const getLatestNews = async () =>{
   
 }
 getLatestNews();
+
