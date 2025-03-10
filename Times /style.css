@@ -8,9 +8,8 @@ body{
 .head_line{
   
   margin-top: 1em;
-  text-decoration: underline;
+ 
   text-transform: uppercase;
-  
 }
 
 button:hover{

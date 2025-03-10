@@ -1,14 +1,29 @@
 const API_KEY = `1723a3d593d4445287963e68f0ccf9db`
 let NewsList = []
+const Menus = document.querySelectorAll(".menus button"); // 버튼 들고오기
+Menus.forEach(menu => menu.addEventListener("click",(event)=> getNewsByCategory(event))); // 버튼클릭 했을 때 실행하는 이벤트
+
+// api 받아오기
 const getLatestNews = async () =>{
   const url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);          // url 인스턴스
   const reSponse = await fetch(url)
   const data = await reSponse.json();
   NewsList = data.articles;
   Render(); // 데이터를 받아 온 후에 함수를 호출해야 동기통신이 맞다.
-  console.log("hello world",NewsList);
-  
+  // console.log("hello world",NewsList);
 }
+
+// 카테고리 별로 가져오기
+const getNewsByCategory = async (event)=>{
+  const category = event.target.textContent;
+  console.log("category",category);
+  const url = new URL(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}`);
+  const reSponse = await fetch(url)
+  const data = await reSponse.json(); 
+  // console.log("ddd",data);
+  NewsList = data.articles;
+  Render();
+};
 
 const Render=()=>{
   const newsHTML = NewsList.map((news) => `<div class="flex justify-between max-w-1/ px-4 mt-4 border-b-[1px] pb-3">
@@ -32,6 +47,9 @@ const Render=()=>{
   document.getElementById("news-board").innerHTML=newsHTML;
 }
 getLatestNews();
-
-
+/**
+ * 1. 버튼에 클릭 이벤트
+ * 2. 카테고리 별 뉴스 가져오기
+ * 3. 그 뉴스를 보여주기
+ */
 
