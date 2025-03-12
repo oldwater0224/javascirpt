@@ -7,11 +7,16 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-500: oklch(0.637 0.237 25.331);
+    --color-orange-400: oklch(0.75 0.183 55.934);
+    --color-amber-50: oklch(0.987 0.022 95.277);
+    --color-amber-300: oklch(0.879 0.169 91.605);
+    --color-amber-500: oklch(0.769 0.188 70.08);
     --color-amber-600: oklch(0.666 0.179 58.318);
     --color-yellow-600: oklch(0.681 0.162 75.834);
     --color-rose-950: oklch(0.271 0.105 12.094);
     --color-gray-500: oklch(0.551 0.027 264.364);
     --color-black: #000;
+    --color-white: #fff;
     --spacing: 0.25rem;
     --container-lg: 32rem;
     --container-xl: 36rem;
@@ -25,6 +30,7 @@
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
     --font-weight-semibold: 600;
+    --radius-lg: 0.5rem;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1047,6 +1053,9 @@
   .rounded {
     border-radius: 0.25rem;
   }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
   .rounded-s {
     border-start-start-radius: 0.25rem;
     border-end-start-radius: 0.25rem;
@@ -1127,6 +1136,14 @@
     border-right-style: var(--tw-border-style);
     border-right-width: 1px;
   }
+  .border-r-2 {
+    border-right-style: var(--tw-border-style);
+    border-right-width: 2px;
+  }
+  .border-r-4 {
+    border-right-style: var(--tw-border-style);
+    border-right-width: 4px;
+  }
   .border-b {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
@@ -1179,6 +1196,18 @@
     --tw-border-style: solid;
     border-style: solid;
   }
+  .border-amber-50 {
+    border-color: var(--color-amber-50);
+  }
+  .border-amber-300 {
+    border-color: var(--color-amber-300);
+  }
+  .border-amber-500 {
+    border-color: var(--color-amber-500);
+  }
+  .border-orange-400 {
+    border-color: var(--color-orange-400);
+  }
   .border-t-gray-500 {
     border-top-color: var(--color-gray-500);
   }
@@ -1226,6 +1255,9 @@
   }
   .bg-red-500\/\[50\%\] {
     background-color: color-mix(in oklab, var(--color-red-500) 50%, transparent);
+  }
+  .bg-white {
+    background-color: var(--color-white);
   }
   .-bg-conic {
     --tw-gradient-position: in oklab;

@@ -24,6 +24,17 @@ const getNewsByCategory = async (event)=>{
   NewsList = data.articles;
   Render();
 };
+// 키워드별 검색
+const getNewsByKeyword = async() =>{
+  const KeyWord = document.getElementById("search_input").value;
+  console.log("keywords",KeyWord);
+  const url = new URL(`https://newsapi.org/v2/top-headlines?country=us&q=${KeyWord}&apiKey=${API_KEY}`);
+  const reSponse = await fetch(url)
+  const data = await reSponse.json();
+  console.log("keywords data",data);
+  NewsList = data.articles;
+  Render();
+}
 
 const Render=()=>{
   const newsHTML = NewsList.map((news) => `<div class="flex justify-between max-w-1/ px-4 mt-4 border-b-[1px] pb-3">
