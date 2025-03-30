@@ -3,13 +3,24 @@ let NewsList = []
 const Menus = document.querySelectorAll(".menus button"); // 버튼 들고오기
 Menus.forEach(menu => menu.addEventListener("click",(event)=> getNewsByCategory(event))); // 버튼클릭 했을 때 실행하는 이벤트
 
-// api 받아오기
-const getLatestNews = async () =>{
-  const url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);          // url 인스턴스
+//1. 반복되는 코드 따로 빼기(코드 리팩토링)
+const getNews = async() =>{
   const reSponse = await fetch(url)
   const data = await reSponse.json();
   NewsList = data.articles;
-  Render(); // 데이터를 받아 온 후에 함수를 호출해야 동기통신이 맞다.
+  Render();
+}
+
+// api 받아오기
+const getLatestNews = async () =>{
+  const url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);          // url 인스턴스
+  getNews();
+  
+  // 코드 리팩토링 한 항목.
+  // const reSponse = await fetch(url)
+  // const data = await reSponse.json();
+  // NewsList = data.articles;
+  // Render(); // 데이터를 받아 온 후에 함수를 호출해야 동기통신이 맞다.
   // console.log("hello world",NewsList);
 }
 
